@@ -1,0 +1,3 @@
+insert into user(id, userName, firstName, lastName, email, role, ssn) values(101,'Subha-123','Subhasri','Sahoo','subha@gmail.com','Developer','ssn123');
+insert into user(id, userName, firstName, lastName, email, role, ssn) values(102,'Salony-123','Salony','Rath','salony@gmail.com','Tester','ssn456');
+insert into user(id, userName, firstName, lastName, email, role, ssn) values(103,'Deba-123','Deba','Sahoo','deba@gmail.com','Tester','ssn789');
