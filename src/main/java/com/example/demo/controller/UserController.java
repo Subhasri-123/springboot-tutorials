@@ -22,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.example.demo.entity.User;
 import com.example.demo.exception.UserAlreadyExistsException;
 import com.example.demo.exception.UserNotFoundException;
+import com.example.demo.exception.UsernameNotFoundException;
 import com.example.demo.service.UserService;
 
 
@@ -75,7 +76,12 @@ public class UserController {
 		}
 	}
 	@GetMapping("/user/byUserName/{username}")
-	public User getUserByUserName(@PathVariable(value = "username") String username) {
-		return userService.getUserByUserName(username);
+	public User getUserByUserName(@PathVariable(value = "username") String username) throws UsernameNotFoundException {
+		User user = userService.getUserByUserName(username);
+		if(user == null) {
+			throw new UsernameNotFoundException("Username" +username+ "is not found");
+		
+		}
+		return user;
 	}
 }
